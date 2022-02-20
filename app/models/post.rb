@@ -2,6 +2,10 @@ class Post < ApplicationRecord
   belongs_to :user
   has_one_attached :thumbnail
 
+  def to_param
+    "#{id} #{title}".parameterize
+  end
+
   def date
     created_at.strftime('%B %d, %Y')
   end

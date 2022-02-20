@@ -1,0 +1,40 @@
+<% custom_page_title(@post.title) %>
+<div class="post-header row">
+  <div class="col-12 col-md-6 order-md-2 d-flex justify-content-center align-items-center text-center px-5">
+    <div class="post-title">
+      <h1><%= @post.title %></h1>
+      <p class="my-3">
+        <span class="text-uppercase fw-light">by <%= @post.user.email %></span>
+      </p>
+      <time class="text-uppercase fw-light"><%= @post.date %></time>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 order-md-1 d-flex align-items-center p-0">
+    <%= cl_image_tag @post.thumbnail.key, width: 1000, height: 1000, crop: :fill %>
+  </div>
+</div>
+<div class="container">
+  <div class="post-content">
+    <%= markdown(@post.content) %>
+  </div>
+  <% if @post.previous || @post.next %>
+    <div class="post-nav">
+      <% if @post.previous %>
+        <div class="col-6 post-nav-previous">
+          <%= link_to post_path(@post.previous) do %>
+            <span><i class="fas fa-long-arrow-alt-left"></i> Previous post</span>
+            <%= @post.previous.title %>
+          <% end %>
+        </div>
+      <% end %>
+      <% if @post.next %>
+        <div class="col-6 post-nav-next">
+          <%= link_to post_path(@post.next) do %>
+            <span>Next post <i class="fas fa-long-arrow-alt-right"></i></span>
+            <%= @post.next.title %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

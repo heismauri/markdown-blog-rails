@@ -1,0 +1,49 @@
+.post-header {
+  padding: 2rem;
+  margin: 0;
+}
+
+.post-title {
+  h1 {
+    font-style: italic;
+    &:after {
+        content: "";
+        display: block;
+        border: 2px solid $primary;
+        width: 2rem;
+        margin: 1rem auto 0;
+    }
+  }
+  span,
+  time {
+    font-size: 80%;
+  }
+  @include media-breakpoint-down(md) {
+    margin-bottom: $spacer;
+  }
+}
+
+.post-content {
+  padding: 2rem 0;
+  border-top: 1px solid $light-gray;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  p:last-child {
+    margin: 0;
+  }
+}
+
+.post-nav {
+  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+  padding: 1.5rem 0;
+  span {
+    display: block;
+  }
+  .post-nav-next {
+    margin-left: auto;
+    text-align: right;
+  }
+}
