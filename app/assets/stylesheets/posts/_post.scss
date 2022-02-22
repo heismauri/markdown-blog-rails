@@ -41,6 +41,10 @@
   padding: 1.5rem 0;
   span {
     display: block;
+    font-weight: bold;
+    color: $light-gray;
+    font-family: $headings-font-family;
+    font-style: italic;
   }
   .post-nav-next {
     margin-left: auto;
