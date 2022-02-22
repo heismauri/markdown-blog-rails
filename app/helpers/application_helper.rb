@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def markdown(article)
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-    markdown.render(article).html_safe
+    options = %i[hard_wrap autolink no_intra_emphasis fenced_code_blocks filter_html]
+    Markdown.new(article, *options).to_html.html_safe
   end
 end
