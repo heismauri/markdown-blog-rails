@@ -66,3 +66,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Markdown Blog Rails gems
 gem 'cloudinary', '~> 1.16.0'
 gem 'redcarpet'
+gem 'pundit'

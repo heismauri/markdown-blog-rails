@@ -1,15 +1,17 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[show]
 
   def show; end
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
     @post = Post.new(post_strong_params)
+    authorize @post
     @post.user = current_user
 
     if @post.save
@@ -41,6 +43,7 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+    authorize @post
   end
 
   def post_strong_params

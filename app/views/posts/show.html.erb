@@ -4,9 +4,22 @@
     <div class="post-title">
       <h1><%= @post.title %></h1>
       <p class="my-3">
-        <span class="text-uppercase fw-light">by <%= @post.user.email %></span>
+        <span class="text-uppercase fw-light">by <%= @post.user.full_name %></span>
       </p>
       <time class="text-uppercase fw-light"><%= @post.date %></time>
+      <% if policy(@post).author? %>
+      <p class="m-0 mt-3">
+        <span class="text-uppercase fw-light">
+          <%= link_to edit_post_path(@post) do %>
+            <i class="fas fa-pencil-alt"></i>
+          <% end %>
+          •
+          <%= link_to post_path(@post), method: :delete, data: { confirm: "¿Estás seguro de eliminar #{@post.title}?" } do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </span>
+      </p>
+      <% end %>
     </div>
   </div>
   <div class="col-12 col-md-6 order-md-1 d-flex align-items-center p-0">
