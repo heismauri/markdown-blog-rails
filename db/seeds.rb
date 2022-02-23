@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+bella_goth = User.create(first_name: 'Bella',
+                         last_name: 'Goth',
+                         email: 'bellagoth@markdown.com',
+                         password: '12345678')
+betty_newbie = User.create(first_name: 'Betty',
+                           last_name: 'Newbie',
+                           email: 'bettynewbie@markdown.com',
+                           password: '12345678')
