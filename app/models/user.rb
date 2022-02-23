@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def set_full_name
     self.full_name = [first_name, last_name].join(' ')
   end
+
+  def should_generate_new_friendly_id?
+    full_name_changed?
+  end
 end

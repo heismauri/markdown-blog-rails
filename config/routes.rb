@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, path: ''
+  devise_for :users
   root to: 'pages#home'
   resources :posts, path: ''
   resources :authors, path: 'author', only: %i[show]
