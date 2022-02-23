@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_one_attached :thumbnail
 
+  scope :authored_by, ->(name) { where(user: name) }
+
   def date
     created_at.strftime('%B %d, %Y')
   end

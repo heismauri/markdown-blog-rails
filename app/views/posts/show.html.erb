@@ -4,7 +4,7 @@
     <div class="post-title">
       <h1><%= @post.title %></h1>
       <p class="my-3">
-        <span class="text-uppercase fw-light">by <%= @post.user.full_name %></span>
+        <span class="text-uppercase fw-light">by <%= link_to @post.user.full_name, author_path(@post.user) %></span>
       </p>
       <time class="text-uppercase fw-light"><%= @post.date %></time>
       <% if policy(@post).author? %>
