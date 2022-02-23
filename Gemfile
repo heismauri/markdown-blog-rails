@@ -67,3 +67,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'cloudinary', '~> 1.16.0'
 gem 'redcarpet'
 gem 'pundit'
+gem 'friendly_id', '~> 5.4.0'

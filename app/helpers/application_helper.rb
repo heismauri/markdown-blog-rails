@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def page_title(separator = " • ")
+  def page_title(separator = ' • ')
     [content_for(:title), 'Markdown Blog Rails'].compact.join(separator)
   end
 
