@@ -10,7 +10,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    author?
   end
 
   def create?
@@ -18,7 +18,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    author?
   end
 
   def author?
