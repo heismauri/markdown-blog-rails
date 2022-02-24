@@ -2,19 +2,14 @@
 <html>
   <head>
     <title><%= page_title %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- 'data-turbolinks-track': 'reload' -->
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
-
     <%= favicon_link_tag asset_path('favicon.svg') %>
   </head>
-
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
