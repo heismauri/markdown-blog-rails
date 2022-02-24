@@ -11,7 +11,7 @@ $font-size-base: 1.125rem;
 
 // Colors
 $body-color: $gray;
-$primary: $red;
+$primary: $purple;
 $success: $green;
 $info: $yellow;
 $danger: $red;
@@ -23,6 +23,8 @@ $border-radius-lg: 4px;
 $border-radius-sm: 4px;
 
 // Override other variables below!
+$min-contrast-ratio: 1.5;
+
 $headings-font-style: italic;
 $headings-font-weight: 700;
 
