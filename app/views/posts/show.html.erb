@@ -8,22 +8,22 @@
       </p>
       <time class="text-uppercase fw-light"><%= @post.date %></time>
       <% if policy(@post).author? %>
-      <p class="m-0 mt-3">
-        <span class="text-uppercase fw-light">
-          <%= link_to edit_post_path(@post) do %>
-            <i class="fas fa-pencil-alt"></i>
-          <% end %>
-          •
-          <%= link_to post_path(@post), method: :delete, data: { confirm: "¿Estás seguro de eliminar #{@post.title}?" } do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
-        </span>
-      </p>
+        <p class="m-0 mt-3">
+          <span class="text-uppercase fw-light">
+            <%= link_to edit_post_path(@post) do %>
+              <i class="fas fa-pencil-alt"></i>
+            <% end %>
+            •
+            <%= link_to post_path(@post), method: :delete, data: { confirm: "¿Estás seguro de eliminar #{@post.title}?" } do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </span>
+        </p>
       <% end %>
     </div>
   </div>
   <div class="col-12 col-md-6 order-md-1 d-flex align-items-center p-0">
-    <%= cl_image_tag @post.thumbnail.key, width: 1000, height: 1000, crop: :fill %>
+    <%= cl_image_tag @post.thumbnail.key, width: 1000, height: 1000, crop: :fill, quality: 100 %>
   </div>
 </div>
 <div class="container">

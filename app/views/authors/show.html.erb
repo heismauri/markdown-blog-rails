@@ -1,4 +1,23 @@
-<%= @author.full_name %>
-<% @posts.each do |post| %>
-  <%= link_to post.title, post_path(post) %>
-<% end %>
+<% custom_page_title(@author.full_name) %>
+<div class="container py-4">
+  <h1><%= @author.full_name %></h1>
+  <hr>
+  <p class="mb-4"><%= @author.biography %></p>
+  <h2>More from <%= @author.full_name %></h2>
+  <hr>
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-12">
+        <div class="row card-post mb-3">
+          <div class="col-4 col-md-3 pe-0 card-post-thumbnail">
+            <%= cl_image_tag post.thumbnail.key, width: 600, height: 400, crop: :fill, quality: 100 %>
+          </div>
+          <div class="col-8 col-md-9 card-post-content">
+            <h3 class="card-post-title"><%= link_to post.title, post_path(post) %></h3>
+            <time class="text-uppercase fw-light"><%= post.date %></time>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
