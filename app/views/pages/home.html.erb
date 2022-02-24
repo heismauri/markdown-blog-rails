@@ -1,7 +1,27 @@
-<h1>All posts</h1>
-<% @posts.each do |post| %>
-  <div class="card">
-    <%= cl_image_tag post.thumbnail.key, width: 100, height: 100, crop: :fill %>
-    <%= link_to post.title, post_path(post) %>
-  </div>
-<% end %>
+<div class="container">
+  <% @posts.each do |post| %>
+    <% if post == @posts.first %>
+      <div class="card-main-post mb-3">
+        <div class="card-main-post-thumbnail">
+          <%= cl_image_tag post.thumbnail.key, width: 1100, height: 1100, crop: :fill, quality: 100 %>
+        </div>
+        <div class="card-main-post-content p-4">
+          <time class="text-uppercase fw-light mb-1 d-block w-fit"><%= post.date %></time>
+          <h2 class="card-post-title m-0 lh-base"><%= link_to post.title, post_path(post) %></h2>
+        </div>
+      </div>
+    <% else %>
+      <div class="col-12">
+        <div class="row card-post mb-3">
+          <div class="col-4 col-md-3 pe-0 card-post-thumbnail">
+            <%= cl_image_tag post.thumbnail.key, width: 600, height: 400, crop: :fill, quality: 100 %>
+          </div>
+          <div class="col-8 col-md-9 card-post-content">
+            <h3 class="card-post-title"><%= link_to post.title, post_path(post) %></h3>
+            <time class="text-uppercase fw-light"><%= post.date %></time>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

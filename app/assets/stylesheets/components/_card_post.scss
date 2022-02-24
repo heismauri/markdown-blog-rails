@@ -1,0 +1,49 @@
+.card-main-post {
+  position: relative;
+  .card-main-post-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    a {
+      background-color: $white;
+      padding: 0 1rem;
+      box-decoration-break: clone;
+    }
+    time {
+      font-size: 80%;
+      padding: 0.25rem 0.5rem;
+      background-color: $primary;
+      color: color-contrast($primary)
+    }
+  }
+  .card-main-post-thumbnail {
+    transition: 0.5s;
+    @include media-breakpoint-up(md) {
+      img {
+        max-height: 600px;
+      }
+    }
+  }
+  &:hover .card-main-post-thumbnail {
+    filter: brightness(60%);
+  }
+}
+.card-post {
+  .card-post-title:after {
+    content: "";
+    display: block;
+    border: 2px solid $primary;
+    width: 6rem;
+    margin: 1rem 0 0;
+  }
+  a {
+    color: $black;
+    &:hover {
+      color: $primary;
+    }
+  }
+  time {
+    font-size: 80%;
+  }
+}
