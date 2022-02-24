@@ -1,11 +1,16 @@
 class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
+
   belongs_to :user
+
   has_one_attached :thumbnail
 
   default_scope { order(created_at: :DESC) }
   scope :authored_by, ->(name) { where(user: name) }
+
+  validates :title, presence: true, length: { minimum: 10 }
+  validates :content, presence: true, length: { minimum: 100 }
 
   def date
     created_at.strftime('%B %d, %Y')
