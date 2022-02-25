@@ -7,7 +7,7 @@
     bottom: 0;
     a {
       background-color: $white;
-      padding: 0 1rem;
+      padding: 0 0.25rem;
       box-decoration-break: clone;
     }
     time {
@@ -18,15 +18,11 @@
     }
   }
   .card-main-post-thumbnail {
-    transition: 0.5s;
     @include media-breakpoint-up(md) {
       img {
         max-height: 600px;
       }
     }
-  }
-  &:hover .card-main-post-thumbnail {
-    filter: brightness(60%);
   }
 }
 .card-post {
@@ -45,5 +41,12 @@
   }
   time {
     font-size: 80%;
+  }
+}
+
+a img {
+  transition: 0.5s;
+  &:hover {
+    filter: brightness(60%);
   }
 }

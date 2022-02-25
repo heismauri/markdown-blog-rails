@@ -1,0 +1,11 @@
+<div class="card-main-post mb-3">
+  <div class="card-main-post-thumbnail">
+    <%= link_to post_path(post) do %>
+      <%= cl_image_tag post.thumbnail.key, width: 1100, height: 1100, crop: :fill, quality: 100 %>
+    <% end %>
+  </div>
+  <div class="card-main-post-content p-4">
+    <time class="text-uppercase fw-light mb-1 d-block w-fit"><%= post.date %></time>
+    <h2 class="card-post-title m-0 lh-base"><%= link_to post.title, post_path(post) %></h2>
+  </div>
+</div>

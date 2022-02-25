@@ -6,7 +6,6 @@ class Post < ApplicationRecord
 
   has_one_attached :thumbnail
 
-  default_scope { order(created_at: :DESC) }
   scope :authored_by, ->(name) { where(user: name) }
 
   validates :title, presence: true, length: { minimum: 10 }
