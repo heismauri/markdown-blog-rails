@@ -1,4 +1,6 @@
 <% custom_page_title(@post.title) %>
+<% content_for(:meta_description) { excerpt((@post.content)) } %>
+<% content_for(:meta_image) { cl_image_path @post.thumbnail.key, width: 1200, height: 630, crop: :fill } %>
 <div class="post-header row">
   <div class="col-12 col-md-6 order-md-2 d-flex justify-content-center align-items-center text-center px-md-5">
     <div class="post-title">

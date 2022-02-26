@@ -14,15 +14,16 @@
       font-size: 80%;
       padding: 0.25rem 0.5rem;
       background-color: $primary;
-      color: color-contrast($primary)
+      color: color-contrast($primary);
     }
   }
-  .card-main-post-thumbnail {
-    @include media-breakpoint-up(md) {
-      img {
-        max-height: 600px;
-      }
+  @include media-breakpoint-up(md) {
+    .card-main-post-thumbnail img {
+      max-height: 600px;
     }
+  }
+  @include media-breakpoint-down(md) {
+    margin: 0 -2rem;
   }
 }
 .card-post {
