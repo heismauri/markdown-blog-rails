@@ -9,6 +9,7 @@ class Post < ApplicationRecord
 
   has_one_attached :thumbnail
 
+  default_scope { order(created_at: :DESC) }
   scope :authored_by, ->(name) { where(user: name) }
 
   validates :title, presence: true, length: { minimum: 10 }
@@ -19,11 +20,11 @@ class Post < ApplicationRecord
   end
 
   def next
-    Post.where('id > ?', id).order(id: :ASC).first
+    Post.unscope(:order).where('id > ?', id).order(id: :ASC).first
   end
 
   def previous
-    Post.where('id < ?', id).order(id: :DESC).first
+    Post.unscope(:order).where('id < ?', id).order(id: :DESC).first
   end
 
   private
