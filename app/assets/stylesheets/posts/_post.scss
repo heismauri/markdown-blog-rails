@@ -7,11 +7,12 @@
   h1 {
     font-style: italic;
     &:after {
-        content: "";
-        display: block;
-        border: 2px solid $primary;
-        width: 2rem;
-        margin: 1rem auto 0;
+      content: "";
+      display: block;
+      width: 2rem;
+      height: 4px;
+      background-color: $primary;
+      margin: 1rem auto 0;
     }
   }
   span,

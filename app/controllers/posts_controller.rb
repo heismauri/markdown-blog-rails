@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: %i[show]
+  skip_before_action :authenticate_user!, only: %i[show search]
+
+  def index
+    @posts = Post.all
+  end
 
   def show; end
 
@@ -13,7 +17,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_strong_params)
     authorize @post
     @post.user = current_user
-
     if @post.save
       redirect_to post_path(@post)
     else
@@ -25,7 +28,6 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_strong_params)
-
     if @post.save
       redirect_to post_path(@post)
     else
@@ -35,8 +37,13 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-
     redirect_to root_path
+  end
+
+  def search
+    @query = params[:query]
+    @posts = Post.search_by_title_and_content(@query)
+    authorize @posts
   end
 
   private

@@ -16,4 +16,18 @@
   .navbar-toggler {
     border: none;
   }
+  .nav-search {
+    .form-control,
+    .btn-search {
+      border: none;
+      border-bottom: 1px solid $light-gray;
+      border-radius: unset;
+    }
+    .btn-search {
+      color: $light-gray;
+    }
+    @include media-breakpoint-up(md) {
+      max-width: 240px;
+    }
+  }
 }
