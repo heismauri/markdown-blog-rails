@@ -1,6 +1,13 @@
 <% custom_page_title(@author.full_name) %>
 <div class="container py-4">
-  <h1><%= @author.full_name %></h1>
+  <div class="d-flex align-items-end">
+    <h1 class="m-0"><%= @author.full_name %></h1>
+    <% if current_user == @author %>
+      <%= link_to edit_user_registration_path do %>
+        <i class="fas fa-pencil-alt ms-2 mb-2"></i>
+      <% end %>
+    <% end %>
+  </div>
   <hr>
   <p class="mb-4"><%= @author.biography %></p>
   <h2>More from <%= @author.full_name %></h2>
