@@ -29,7 +29,7 @@
         <%= form_tag search_path, class: "d-flex nav-search", method: :get do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control ms-2",
+            class: "form-control ms-md-2",
             placeholder: "Find a post"
           %>
           <%= button_tag type: :submit, name: nil, class: "btn btn-search" do %>
