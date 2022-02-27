@@ -2,6 +2,9 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_content, against: %i[title content], using: { tsearch: { prefix: true } }
+
   belongs_to :user
 
   has_one_attached :thumbnail

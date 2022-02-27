@@ -30,8 +30,9 @@
   .card-post-title:after {
     content: "";
     display: block;
-    border: 2px solid $primary;
     width: 6rem;
+    height: 4px;
+    background-color: $primary;
     margin: 1rem 0 0;
   }
   a {

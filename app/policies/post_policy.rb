@@ -5,6 +5,10 @@ class PostPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
+
   def show?
     true
   end
@@ -19,6 +23,10 @@ class PostPolicy < ApplicationPolicy
 
   def destroy?
     author?
+  end
+
+  def search?
+    true
   end
 
   def author?

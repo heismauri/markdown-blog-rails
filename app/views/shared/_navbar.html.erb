@@ -8,16 +8,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <%= link_to "Full mode", posts_path, class: "nav-link" %>
+        </li>
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "New post", new_post_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Comments", "#", class: "nav-link" %>
-          </li>
           <li class="nav-item dropdown">
             <%= link_to current_user.full_name, "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "New post", new_post_path, class: "dropdown-item" %>
               <%= link_to "My profile", author_path(current_user), class: "dropdown-item" %>
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -27,6 +25,16 @@
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
+        <% end %>
+        <%= form_tag search_path, class: "d-flex nav-search", method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control ms-2",
+            placeholder: "Find a post"
+          %>
+          <%= button_tag type: :submit, name: nil, class: "btn btn-search" do %>
+            <i class="fas fa-search"></i>
+          <% end %>
         <% end %>
       </ul>
     </div>
