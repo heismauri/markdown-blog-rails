@@ -6,4 +6,8 @@ module ApplicationHelper
   def custom_page_title(title)
     content_for(:title) { title }
   end
+
+  def current_controller?(name)
+    name.include?(controller.controller_name)
+  end
 end
