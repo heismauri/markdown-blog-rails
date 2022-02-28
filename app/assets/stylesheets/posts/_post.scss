@@ -34,6 +34,20 @@
   p:last-child {
     margin: 0;
   }
+  blockquote {
+    padding: 1rem;
+    padding-left: 3.5rem;
+    background: #FCFCFC;
+    &:before {
+      content: "\f10d";
+      font-family: "Font Awesome 5 Free";
+      font-size: 1.5rem;
+      font-weight: 900;
+      float: left;
+      margin-left: -2.5rem;
+      color: $primary;
+    }
+  }
 }
 
 .post-nav {
