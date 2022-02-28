@@ -1,5 +1,6 @@
 .card-main-post {
   position: relative;
+  margin: 0 -2rem;
   .card-main-post-content {
     position: absolute;
     left: 0;
@@ -16,14 +17,6 @@
       background-color: $primary;
       color: color-contrast($primary);
     }
-  }
-  @include media-breakpoint-up(md) {
-    .card-main-post-thumbnail img {
-      max-height: 600px;
-    }
-  }
-  @include media-breakpoint-down(md) {
-    margin: 0 -2rem;
   }
 }
 .card-post {

@@ -28,7 +28,7 @@
     <%= cl_image_tag @post.thumbnail.key, width: 1000, height: 1000, crop: :fill, quality: 100 %>
   </div>
 </div>
-<div class="container">
+<div class="container-lg">
   <div class="post-content">
     <%= markdown(@post.content) %>
   </div>
