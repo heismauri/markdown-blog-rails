@@ -1,8 +1,9 @@
 import EasyMDE from "easymde";
 
-window.onload = function () {
-  //Make textarea a Markdown editor
-  const easymde = new EasyMDE({
+import { previewThumbnailOnFileSelect } from "../components/thumbnail_preview"
+
+const loadEasyMDE = () => {
+  new EasyMDE({
     autoDownloadFontAwesome: false,
     element: document.getElementById("post-editor"),
     spellChecker: false,
@@ -12,3 +13,6 @@ window.onload = function () {
     hideIcons: ["fullscreen", "side-by-side"]
   });
 };
+
+loadEasyMDE();
+previewThumbnailOnFileSelect();
