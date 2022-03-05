@@ -37,7 +37,8 @@
   blockquote {
     padding: 1rem;
     padding-left: 3.5rem;
-    background: $light-gray;
+    background: rgba(0, 0, 0, 0.01);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     &:before {
       content: "\f10d";
       font-family: "Font Awesome 5 Free";
