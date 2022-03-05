@@ -1,3 +1,25 @@
+.body-content {
+  width: 100%;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
 // In bootstrap 5 legend floats left and requires the following element
 // to be cleared. In a radio button or checkbox group the element after
 // the legend will be the automatically generated hidden input; the fix
@@ -7,17 +29,4 @@
 // or checkbox.
 legend ~ div.form-check:first-of-type {
   clear: left;
-}
-
-.form-select {
-  &.date,
-  &.datetime,
-  &.time {
-    &:first-of-type { margin-left: 0 !important; }
-    &:last-of-type { margin-right: 0 !important; }
-  }
-}
-
-abbr[title] {
-  text-decoration: none;
 }

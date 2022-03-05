@@ -1,22 +1,22 @@
 // Specific CSS for your home-page
-.body-content {
-  width: 100%;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-a {
-  text-decoration: none;
-  transition: 0.5s;
-}
-
-.w-fit {
-  width: fit-content;
+.card-main-post {
+  position: relative;
+  margin: 0 -2rem;
+  .card-main-post-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    a {
+      background-color: $white;
+      padding: 0 0.25rem;
+      box-decoration-break: clone;
+    }
+    time {
+      font-size: 80%;
+      padding: 0.25rem 0.5rem;
+      background-color: $primary;
+      color: color-contrast($primary);
+    }
+  }
 }
