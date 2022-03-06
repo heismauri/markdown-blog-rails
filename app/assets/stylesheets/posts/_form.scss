@@ -4,3 +4,17 @@
     border-color: $input-border-color !important;
   }
 }
+
+textarea.form-control.is-valid + .EasyMDEContainer {
+  .editor-toolbar,
+  .CodeMirror {
+    border-color: $success !important;
+  }
+}
+
+textarea.form-control.is-invalid + .EasyMDEContainer {
+  .editor-toolbar,
+  .CodeMirror {
+    border-color: $danger !important;
+  }
+}
