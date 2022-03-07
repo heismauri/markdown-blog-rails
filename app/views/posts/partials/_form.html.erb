@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-12 col-md-8">
       <%= f.input :title %>
-      <%= f.input :content, input_html: { rows: 10, id: "post-editor" } %>
+      <%= f.input :content, input_html: { rows: 10 } %>
     </div>
     <div class="col-12 col-md-4">
-      <%= f.input :thumbnail, required: true, input_html: { id: "thumbnail-upload", accept: "image/jpeg, image/png" } %>
+      <%= f.input :thumbnail, required: true, input_html: { accept: "image/jpeg, image/png" } %>
       <% if @post.thumbnail.attached? %>
-        <%= cl_image_tag @post.thumbnail.key, width: 1000, crop: :fill, id: "thumbnail-preview", class: "form-control p-2 mb-3" %>
+        <%= cl_image_tag @post.thumbnail.key, width: 1000, crop: :fill, id: "post_thumbnail_preview", class: "form-control p-2 mb-3" %>
       <% else %>
-        <%= image_tag "", id: "thumbnail-preview", class: "d-none form-control p-2 mb-3" %>
+        <%= image_tag "", id: "post_thumbnail_preview", class: "d-none form-control p-2 mb-3" %>
       <% end %>
       <%= f.button :submit, class: "btn-primary w-100" %>
     </div>
