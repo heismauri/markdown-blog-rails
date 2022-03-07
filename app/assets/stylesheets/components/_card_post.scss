@@ -10,7 +10,7 @@
   a {
     color: $black;
     &:hover {
-      color: $primary;
+      color: $link-hover-color;
     }
   }
   .card-post-info {
