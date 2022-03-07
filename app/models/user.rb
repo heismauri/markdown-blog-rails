@@ -1,14 +1,20 @@
 class User < ApplicationRecord
+  # Callbacks
   before_save :set_full_name
 
+  # FriendlyId
   extend FriendlyId
   friendly_id :full_name, use: :slugged
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+  # Devise
+  ## Include default devise modules. Others available are:
+  ## :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
+  # Associations
   has_many :posts, dependent: :destroy
 
+  # Validations
   validates :first_name, presence: true
   validates :last_name, presence: true
 
