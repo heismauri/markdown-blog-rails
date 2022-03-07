@@ -1,12 +1,17 @@
 <% custom_page_title(@author.full_name) %>
 <div class="container-lg py-4">
-  <div class="d-flex align-items-end">
+  <div class="d-flex align-items-end justify-content-between">
     <h1 class="m-0"><%= @author.full_name %></h1>
+    <span>
     <% if current_user == @author %>
       <%= link_to edit_user_registration_path do %>
-        <i class="fas fa-pencil-alt ms-2 mb-2"></i>
+        <i class="fas fa-pencil-alt ms-2 mb-2 fs-5"></i>
       <% end %>
     <% end %>
+    <%= mail_to @author.email do %>
+      <i class="fas fa-at ms-2 mb-2 fs-5"></i>
+    <% end %>
+    </span>
   </div>
   <hr>
   <p class="mb-4"><%= @author.biography %></p>
