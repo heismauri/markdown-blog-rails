@@ -64,7 +64,7 @@
   a {
     color: $black;
     &:hover {
-      color: revert;
+      color: $link-hover-color;
     }
   }
   .post-nav-next {
