@@ -1,17 +1,23 @@
 class Post < ApplicationRecord
+  # FriendlyId
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  # Search
   include PgSearch::Model
   pg_search_scope :search_by_title_and_content, against: %i[title content], using: { tsearch: { prefix: true } }
 
+  # Associations
   belongs_to :user
 
+  # Active Storage
   has_one_attached :thumbnail
 
+  # Scopes
   default_scope { order(created_at: :DESC) }
   scope :authored_by, ->(name) { where(user: name) }
 
+  # Validations
   validates :title, presence: true, length: { minimum: 10 }
   validates :content, presence: true, length: { minimum: 100 }
   validate :thumbnail_validation
