@@ -17,10 +17,3 @@
     font-size: 80%;
   }
 }
-
-a img {
-  transition: 0.5s;
-  &:hover {
-    filter: brightness(60%);
-  }
-}
