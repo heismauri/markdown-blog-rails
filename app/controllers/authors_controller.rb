@@ -3,6 +3,7 @@ class AuthorsController < ApplicationController
 
   def show
     @author = User.friendly.find(params[:id])
+    authorize @author
     @posts = Post.authored_by(@author)
   end
 end

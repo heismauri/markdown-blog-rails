@@ -12,8 +12,10 @@
           <li class="nav-item dropdown">
             <%= link_to current_user.full_name, "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "New post", new_post_path, class: "dropdown-item" %>
-              <%= link_to "My profile", author_path(current_user), class: "dropdown-item" %>
+              <% if current_user.role == "editor" %>
+                <%= link_to "New post", new_post_path, class: "dropdown-item" %>
+                <%= link_to "My profile", author_path(current_user), class: "dropdown-item" %>
+              <% end %>
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
               <li><hr class="dropdown-divider"></li>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
