@@ -14,6 +14,9 @@ class User < ApplicationRecord
   # Associations
   has_many :posts, dependent: :destroy
 
+  # Enum
+  enum role: %i[subscriber editor]
+
   # Validations
   validates :first_name, presence: true
   validates :last_name, presence: true
