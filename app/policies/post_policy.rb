@@ -18,7 +18,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    editor?
   end
 
   def destroy?
@@ -31,5 +31,9 @@ class PostPolicy < ApplicationPolicy
 
   def author?
     record.user == user
+  end
+
+  def editor?
+    user.role == "editor"
   end
 end
