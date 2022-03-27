@@ -21,5 +21,6 @@
     <% @posts.each do |post| %>
       <%= render 'posts/partials/horizontal_card', post: post %>
     <% end %>
+      <%== render partial: 'shared/pagy', locals: {pagy: @pagy} %>
   </div>
 </div>
