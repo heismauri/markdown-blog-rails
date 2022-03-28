@@ -4,6 +4,6 @@ class AuthorsController < ApplicationController
   def show
     @author = User.friendly.find(params[:id])
     authorize @author
-    @posts = Post.authored_by(@author)
+    @pagy, @posts = pagy(Post.authored_by(@author), items: 6)
   end
 end

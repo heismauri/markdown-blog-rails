@@ -70,3 +70,4 @@ gem 'redcarpet', require: %w[redcarpet redcarpet/render_strip]
 gem 'pundit'
 gem 'friendly_id', '~> 5.4.0'
 gem 'pg_search', '~> 2.3.0'
+gem 'pagy'
