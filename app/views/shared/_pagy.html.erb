@@ -1,0 +1,21 @@
+<%#
+  This template is i18n-ready: if you don't use i18n, then you can replace the pagy_t
+  calls with the actual strings ("&lsaquo; Prev", "Next &rsaquo;", "&hellip;").
+  The link variable is set to a proc that returns the link tag.
+  Usage: link.call( page_number [, text [, extra_attributes_string ]])
+%>
+<% _link = pagy_link_proc(pagy) %>
+<nav id="pagy-author-posts" aria-label="pager">
+  <ul class="w-100 justify-content-between d-flex p-0 list-unstyled">
+    <%# Show only one button on page one %>
+    <% if pagy.next && !pagy.prev %>
+      <li class="pagy-author-button pagy-author-more mx-auto btn btn-primary"><%== _link.call(pagy.next, "Read more stories") %></li>
+    <% end %>
+    <% if pagy.prev %>
+      <li class="pagy-author-button pagy-author-prev btn btn-primary"><%== _link.call(pagy.prev, "Previous") %></li>
+    <% end %>
+    <% if pagy.next && pagy.prev %>
+      <li class="pagy-author-button pagy-author-next btn btn-primary"><%== _link.call(pagy.next, "Next") %></li>
+    <% end %>
+  </ul>
+</nav>

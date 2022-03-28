@@ -1,0 +1,19 @@
+.pagy-author-button {
+  a,
+  a:hover {
+    color: inherit;
+  }
+  &.pagy-author-prev:before,
+  &.pagy-author-next:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  &.pagy-author-prev:before {
+    content: "\f104";
+    margin-right: 0.25rem;
+  }
+  &.pagy-author-next:after {
+    content: "\f105";
+    margin-left: 0.25rem;
+  }
+}
