@@ -17,10 +17,12 @@
   <p class="mb-4"><%= @author.biography %></p>
   <h2>More from <%= @author.full_name %></h2>
   <hr>
-  <div class="row">
-    <% @posts.each do |post| %>
-      <%= render 'posts/partials/horizontal_card', post: post %>
-    <% end %>
-      <%== render partial: 'shared/pagy', locals: {pagy: @pagy} %>
-  </div>
+  <turbo-frame>
+    <div class="row">
+      <% @posts.each do |post| %>
+        <%= render 'posts/partials/horizontal_card', post: post %>
+      <% end %>
+    </div>
+    <%= render partial: 'shared/pagy', locals: { pagy: @pagy } %>
+  </turbo-frame>
 </div>
