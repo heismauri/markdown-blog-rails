@@ -25,7 +25,10 @@
     </div>
   </div>
   <div class="col-12 col-md-6 order-md-1 d-flex align-items-center p-0">
-    <%= cl_image_tag @post.thumbnail.key, width: 1000, height: 1000, crop: :fill, alt: @post.title %>
+    <picture>
+      <source srcset="<%= cl_image_path @post.thumbnail.key, width: 718, height: 718, crop: :fill, quality: 100 %> 1x, <%= cl_image_path @post.thumbnail.key, width: 1436, height: 1436, crop: :fill, quality: 100 %> 2x">
+      <%= cl_image_tag @post.thumbnail.key, width: 718, height: 718, crop: :fill, quality: 100, alt: @post.title %>
+    </picture>
   </div>
 </div>
 <div class="container-lg">
