@@ -3,9 +3,9 @@
     <div class="col-4 col-md-3 pe-0 card-post-thumbnail">
       <%= link_to post_path(post) do %>
         <picture>
-          <source srcset="<%= cl_image_path post.thumbnail.key, width: 400, height: 400, crop: :fill %>" media="(max-width: 767.98px)">
-          <source srcset="<%= cl_image_path post.thumbnail.key, width: 600, height: 400, crop: :fill %>" media="(min-width: 768px)">
-          <%= cl_image_tag post.thumbnail.key, width: 600, height: 400, crop: :fill, alt: post.title %>
+          <source srcset="<%= cl_image_path post.thumbnail.key, width: 230, height: 230, crop: :fill, quality: 100 %> 1x, <%= cl_image_path post.thumbnail.key, width: 460, height: 460, crop: :fill, quality: 100 %> 2x" media="(max-width: 767.98px)">
+          <source srcset="<%= cl_image_path post.thumbnail.key, width: 264, height: 176, crop: :fill, quality: 100 %> 1x, <%= cl_image_path post.thumbnail.key, width: 528, height: 352, crop: :fill, quality: 100 %> 2x" media="(min-width: 768px)">
+          <%= cl_image_tag post.thumbnail.key, width: 264, height: 176, crop: :fill, quality: 100, alt: post.title %>
         </picture>
       <% end %>
     </div>
