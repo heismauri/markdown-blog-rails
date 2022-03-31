@@ -14,6 +14,6 @@ module PostHelper
 
   def excerpt(article)
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
-    truncate(markdown.render(article).html_safe, length: 300, separator: ' ')
+    truncate(markdown.render(article).html_safe, length: 250, separator: ' ')
   end
 end

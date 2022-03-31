@@ -5,7 +5,7 @@
         <picture>
           <source srcset="<%= cl_image_path post.thumbnail.key, width: 400, height: 400, crop: :fill %>" media="(max-width: 767.98px)">
           <source srcset="<%= cl_image_path post.thumbnail.key, width: 600, height: 400, crop: :fill %>" media="(min-width: 768px)">
-          <%= cl_image_tag post.thumbnail.key, width: 600, height: 400, crop: :fill %>
+          <%= cl_image_tag post.thumbnail.key, width: 600, height: 400, crop: :fill, alt: post.title %>
         </picture>
       <% end %>
     </div>
