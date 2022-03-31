@@ -1,4 +1,5 @@
 <div class="container-lg">
+  <h1 class="d-none">All posts</h1>
   <% @posts.each do |post| %>
     <% if post == @posts.first %>
       <%= render 'posts/partials/main_card', post: post %>

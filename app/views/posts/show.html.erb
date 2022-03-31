@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="col-12 col-md-6 order-md-1 d-flex align-items-center p-0">
-    <%= cl_image_tag @post.thumbnail.key, width: 1000, height: 1000, crop: :fill %>
+    <%= cl_image_tag @post.thumbnail.key, width: 1000, height: 1000, crop: :fill, alt: @post.title %>
   </div>
 </div>
 <div class="container-lg">
