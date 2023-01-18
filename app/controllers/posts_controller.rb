@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @query = params[:query]
+    @query = params[:query][:title]
     @posts = Post.search_by_title_and_content(@query)
     authorize @posts
   end

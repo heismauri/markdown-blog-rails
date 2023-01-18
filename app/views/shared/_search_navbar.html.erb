@@ -1,0 +1,6 @@
+<%= simple_form_for :query, url: search_path, method: :get, html: { class: 'd-flex nav-search' } do |f| %>
+  <%= f.input :title, placeholder: 'Find a post', label: false, wrapper: false, input_html: { value: params[:query] ? params[:query][:title] : '', class: 'ms-md-2' } %>
+  <%= f.button :button, name: nil, class: 'btn-search' do %>
+    <i class="fas fa-search"></i>
+  <% end %>
+<% end %>

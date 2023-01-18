@@ -1,0 +1,14 @@
+<%= simple_form_for :aircrafts_search, url: aircafts_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%= f.input :start_time, placeholder: 'Start time', as: :date, html5: true, input_html: { onfocus: "(this.type='date')" } %>
+  <%= f.input :finish_time, placeholder: 'Finish time', as: :date, html5: true, input_html: { onfocus: "(this.type='date')" } %>
+  <%= f.submit "Search", class: "btn btn-dark" %>
+<% end %>
+
+<%= form_tag aircrafts_path, class: "d-flex nav-search", method: :get do %>
+  <%= date_field_tag :start_time, params[:start_time], class: "form-control me-2", placeholder: "Start Time" %>
+  <%= date_field_tag :finish_time, params[:finish_time], class: "form-control me-2", placeholder: "finish Time" %>
+  <%= number_field_tag :seats, params[:seats], class: "form-control", placeholder: "seats" %>
+  <%= button_tag type: :submit, name: nil, class: "btn btn-dark" do %>
+    <p>Search</p>
+  <% end %>
+<% end %>
