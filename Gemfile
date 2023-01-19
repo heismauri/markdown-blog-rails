@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
+gem 'rails', '~> 7.0.4'
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'sprockets-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -65,7 +67,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Markdown Blog Rails gems
-gem 'cloudinary', '~> 1.16.0'
+gem 'cloudinary'
 gem 'redcarpet', require: %w[redcarpet redcarpet/render_strip]
 gem 'pundit'
 gem 'friendly_id', '~> 5.4.0'
