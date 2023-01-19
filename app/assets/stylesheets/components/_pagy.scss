@@ -5,7 +5,7 @@
   }
   &.pagy-author-prev:before,
   &.pagy-author-next:after {
-    font-family: "Font Awesome 5 Free";
+    font-family: $font-awesome-font;
     font-weight: 900;
   }
   &.pagy-author-prev:before {
