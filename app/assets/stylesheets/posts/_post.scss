@@ -41,7 +41,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     &:before {
       content: "\f10d";
-      font-family: "Font Awesome 5 Free";
+      font-family: $font-awesome-font;
       font-weight: 900;
       float: left;
       margin-left: -2rem;

@@ -20,11 +20,17 @@
     .form-control,
     .btn-search {
       border: none;
-      border-bottom: 1px solid $light-gray;
+      border-bottom: 1px solid $navbar-light-color;
       border-radius: unset;
     }
     .btn-search {
-      color: $light-gray;
+      color: $navbar-light-color;
+    }
+    .form-control {
+      &::placeholder,
+      &::-webkit-input-placeholder {
+        color: $navbar-light-color;
+      }
     }
     @include media-breakpoint-down(md) {
       .form-control {
